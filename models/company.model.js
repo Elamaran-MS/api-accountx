@@ -4,6 +4,8 @@ const CompanySchema = new mongoose.Schema({
     _id: {type: objectId, auto: true},
     companyName: {type: String, required: true},
     companyID: {type: String, required: true}
+},{
+    versionKey: false
 });
 
 const Company = mongoose.model('companies', CompanySchema);

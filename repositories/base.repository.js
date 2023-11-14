@@ -18,6 +18,10 @@ class BaseRepository{
     async deleteById(id){
         return this.collection.findByIdAndDelete(id);
     }
+    // async findOne(id){
+    //     var data = await this.collection.findOne(id).lean().exec();
+    //     return data;
+    // }
 }
 
 module.exports = BaseRepository;

@@ -6,6 +6,7 @@ class BaseController{
     }
     //Common Response Methods
     ok(res, doc){
+        // console.log(typeof doc);
         if(!!doc){
             res.status(StatusCodes.OK).send(doc);
         }else{
@@ -71,7 +72,16 @@ class BaseController{
         }).catch(err=>{
             return this.internalServerError(res, err);
         })
-    }
+    } 
+    // getAddressByCompId = (req, res) => {
+    //     const id = {"_comp_id" : req.params.id};
+        
+    //     this.repo.findOne(id).then(doc=>{
+    //         return this.ok(res, doc);
+    //     }).catch(err=>{
+    //         return this.internalServerError(res, err);
+    //     })
+    // }
 }
 
 module.exports = BaseController;

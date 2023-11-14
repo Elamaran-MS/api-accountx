@@ -11,7 +11,9 @@ const ProfileSchema = new mongoose.Schema({
     mobileNumber: { type: String, required: true },
     businessEmail: { type: String, required: true },
     industry: { type: String },
-    image: { type: String }
+    image: { data: Buffer, contentType: String }
+},{
+    versionKey: false
 });
 
 const Profile = mongoose.model('profiles', ProfileSchema);
